@@ -27,13 +27,6 @@
       "cor": "#84A98C",
       "descricao": "Formação teste update",
       "url": "https://pedromartins.dev"
-    },
-    {
-      "titulo": "Construção de sites",
-      "descricao": "Vídeos com aulas simples de como construir sites responsívos",
-      "url": "www.youtube.com.br",
-      "cor": "#000000",
-      "id": 5
     }
   ],
   "videos": [
