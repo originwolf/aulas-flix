@@ -1,5 +1,7 @@
 # AulasFlix
 
+[Veja a aplicação na vercel](https://aulas-flix.vercel.app)
+
 ## Conheça o desenvolvedor:
 
 | Pedro Martins |

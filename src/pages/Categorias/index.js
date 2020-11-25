@@ -1,11 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ModalDialog from "../../components/Modal";
 import { useForm } from 'react-hook-form';
+import { Link, useHistory } from 'react-router-dom';
 import './index.css' 
 
 function CadastroCategoria() {
     const { register, handleSubmit, errors } = useForm();
+    const history = useHistory();
+
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {setOpen(true);};
+    const handleNo = () => {
+        setOpen(false);
+        history.push('/ ');
+    };
+    const handleYes = () => {
+        setOpen(false);
+    };
 
     function onSubmit(dados) {
         fetch(`http://localhost:8081/categorias`, {
@@ -20,6 +33,7 @@ function CadastroCategoria() {
         })
         .catch((error) => console.error("Error:", error))
         .then((response) => console.log("Success:", JSON.stringify(response)))
+        .then(handleClickOpen())
         }
         return (
             <div>
@@ -40,11 +54,23 @@ function CadastroCategoria() {
                                 <br />
                                 <input type="color" className="form-control input" placeholder="Cor" name="cor" ref={register({required: true})} />
                                 <br />
-                                <input type="submit" className="btn btn-dark btn-lg" value="Salvar"/>
+                                <input type="submit" className="btn btn-dark btn-lg mr-4" value="Salvar"/>
+                                <Link className="btn btn-secondary btn-lg mr-4" to="/videos" role="button">Videos</Link>
+                                <Link className="btn btn-primary btn-lg" to="/" role="button">Home</Link>
                             </form>
                         </div>
                     </div>
                 </div>
+
+                <ModalDialog
+                    open = {open}
+                    handleClose = {handleNo}
+                    titulo = 'Cadastrado com sucesso'
+                    texto = 'Deseja fazer outro cadastro?'
+                    handleSim = {handleYes}
+                    handleNao = {handleNo}
+                />
+
                 <Footer />
             </div>
         )

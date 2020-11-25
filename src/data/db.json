@@ -20,13 +20,6 @@
       "cor": "#52796F",
       "descricao": "Formação de Front End na Alura",
       "url": "https://www.alura.com.br/cursos-online-front-end"
-    },
-    {
-      "id": 4,
-      "titulo": "Teste update API",
-      "cor": "#84A98C",
-      "descricao": "Formação teste update",
-      "url": "https://pedromartins.dev"
     }
   ],
   "videos": [
