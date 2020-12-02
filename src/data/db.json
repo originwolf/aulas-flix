@@ -2,24 +2,24 @@
   "categorias": [
     {
       "id": 1,
-      "titulo": "Arduino",
+      "titulo": "Apresentações",
       "cor": "#2F3E46",
-      "descricao": "IFSULDEMINAS - Campus Machado",
-      "url": "https://info.mch.ifsuldeminas.edu.br/"
+      "descricao": "Apresentações dos cursos e projetos abordados no portfólio",
+      "url": "https://pedromartins.dev"
     },
     {
-      "id": 2,
-      "titulo": "Fundamentos de Computação",
-      "cor": "#354F52",
-      "descricao": "IFSULDEMINAS - Campus Machadoa",
-      "url": "https://info.mch.ifsuldeminas.edu.br/"
+      "titulo": "Construção de Sites",
+      "descricao": "Tutoriais e vídeos voltados para o desenvolvimento web",
+      "url": "http://pedromartins.dev",
+      "cor": "#354f52",
+      "id": 2
     },
     {
-      "id": 3,
-      "titulo": "Front End",
-      "cor": "#52796F",
-      "descricao": "Formação de Front End na Alura",
-      "url": "https://www.alura.com.br/cursos-online-front-end"
+      "titulo": "Conteúdo Teórico",
+      "descricao": "Videos explicativos sobre heurísticas, dúvidas, exposições e outros conteúdos teóricos",
+      "url": "http://pedromartins.dev",
+      "cor": "#52796f",
+      "id": 3
     }
   ],
   "videos": [
@@ -31,36 +31,18 @@
       "url": "https://www.youtube.com/watch?v=jNwgulyPmO8"
     },
     {
-      "id": 2,
+      "titulo": "Apresentação do curso de UI-UX",
+      "description": "Introdução aos temas e metodologia de ensino",
+      "url": "https://www.youtube.com/watch?v=U0_BQgZ9Beg",
       "categoriaId": 1,
-      "titulo": "Historia do Arduino",
-      "description": "Historia do Arduino",
-      "url": "https://youtu.be/9nucMfF15Ik"
+      "id": 2
     },
     {
-      "id": 3,
-      "categoriaId": 2,
-      "titulo": "Introdução ao Scratch - Curso de Algoritmos",
-      "description": "Introdução ao Scratch",
-      "url": "https://www.youtube.com/watch?v=GrPkuk1ezyo"
-    },
-    {
-      "id": 4,
+      "titulo": "Heurísticas de Nielsen",
+      "description": "Exposição e explicação das heurísticas de Nielsen",
+      "url": "https://www.youtube.com/watch?v=jU9Qm61Mhoo",
       "categoriaId": 3,
-      "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
-    },
-    {
-      "id": 5,
-      "categoriaId": 3,
-      "titulo": "Novidades do Angular v9",
-      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
-    },
-    {
-      "id": 6,
-      "categoriaId": 3,
-      "titulo": "A dobra de raios de Avatar | Nerdologia",
-      "url": "https://www.youtube.com/watch?v=3dI7t6hzs4Y"
+      "id": 3
     }
   ]
 }

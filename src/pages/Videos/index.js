@@ -3,12 +3,56 @@ import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import repository from "../../Repository.js";
+import ModalDialog from "../../components/Modal";
 import "./index.css"
 
 function CadastroVideo() {
     const { register, handleSubmit, errors } = useForm();
     const [categorias, setCategorias] = useState([]);
-        return (
+    const history = useHistory();
+
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {setOpen(true);};
+    const handleNo = () => {
+        setOpen(false);
+        history.push('/ ');
+    };
+    const handleYes = () => {
+        setOpen(false);
+        document.getElementById("video-form").reset();
+    };
+
+    useEffect(() => {
+        repository.getCategorias().then(async (categorias) => {
+            await setCategorias(categorias);
+        });
+    }, []);
+
+    function onSubmit(dados) {
+        console.log("Dados:", dados);
+        fetch(`http://localhost:8081/videos`, {
+            method: "post",
+            headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            ...dados,
+            categoriaId: Number(dados.categoriaId),
+        }),
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(() => {
+            console.log("Cadastrou com sucesso!");
+        })
+        .catch((error) => console.error("Error:", error))
+        .then((response) => console.log("Success:", JSON.stringify(response)))
+        .then(handleClickOpen())
+    }
+
+    return (
         <div>
             <Header />
 
@@ -18,7 +62,7 @@ function CadastroVideo() {
                 </div>
             
                 <div className="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 pb-5">
-                    <form className="container" id="video-form" onSubmit={handleSubmit()}>
+                    <form className="container" id="video-form" onSubmit={handleSubmit(onSubmit)}>
 
                         <input type="text" className="form-control input" id="titulo" placeholder="Título" autofocus name="titulo" ref={register({ required: "Preencha este campo." })}/>
                         <p>{errors.titulo?.message}</p>
@@ -47,6 +91,15 @@ function CadastroVideo() {
                 </div>
 
             </div>
+
+            <ModalDialog
+                open = {open}
+                handleClose = {handleNo}
+                titulo = 'Cadastrado com sucesso'
+                texto = 'Deseja fazer outro cadastro?'
+                handleSim = {handleYes}
+                handleNao = {handleNo}
+            />
 
             <Footer />
         </div>

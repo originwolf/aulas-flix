@@ -18,6 +18,7 @@ function CadastroCategoria() {
     };
     const handleYes = () => {
         setOpen(false);
+        document.getElementById("categoria-form").reset();
     };
 
     function onSubmit(dados) {
@@ -45,7 +46,7 @@ function CadastroCategoria() {
                         </div>
                         
                         <div className="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3 pb-5">
-                            <form onSubmit={handleSubmit(onSubmit)} className="form-group">
+                            <form id="categoria-form" onSubmit={handleSubmit(onSubmit)} className="form-group">
                                 <input type="text" className="form-control input" placeholder="Título" name="titulo" ref={register({required: true})} />
                                 <br />
                                 <input type="text" className="form-control input" placeholder="Descrição Extra" name="descricao" ref={register({required: true})} />
