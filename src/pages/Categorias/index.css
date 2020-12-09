@@ -10,4 +10,5 @@
 
 .cadastro {
     background-color: #efefef;
+    min-height: calc(100vh - 203px);
 }
