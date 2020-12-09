@@ -1,5 +1,6 @@
-const URL_CATEGORIAS = `http://localhost:8081/categorias`;
-const URL_VIDEOS = `http://localhost:8081/videos`;
+import config from "./config.js"
+const URL_CATEGORIAS = `${config.URL_BACKEND}/categorias`;
+const URL_VIDEOS = `${config.URL_BACKEND}/videos`;
 
 function getCategorias() {
   return fetch(`${URL_CATEGORIAS}`, {

@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import ModalDialog from "../../components/Modal";
 import { useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
+import config from "../../config.js";
 import './index.css' 
 
 function CadastroCategoria() {
@@ -22,7 +23,7 @@ function CadastroCategoria() {
     };
 
     function onSubmit(dados) {
-        fetch(`http://localhost:8081/categorias`, {
+        fetch(`${config.URL_BACKEND}/categorias`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
