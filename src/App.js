@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <article className="banner">
+    <article className="banner pb-5">
       {dadosVideos.map((categoria, indice) => {
         if (indice === 0) {
           return (
