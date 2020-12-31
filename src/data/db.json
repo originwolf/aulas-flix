@@ -2,7 +2,7 @@
   "categorias": [
     {
       "id": 1,
-      "titulo": "Cursos UI-UX",
+      "titulo": "Material UI-UX",
       "cor": "#2F3E46",
       "descricao": "Tópicos relacionados a ui-ux design",
       "url": "https://pedromartins.dev/projetos-web.html"
